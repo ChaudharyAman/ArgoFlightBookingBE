@@ -81,7 +81,3 @@ This structure follows commonly accepted patterns for scalable Node.js backends.
 
 ---
 
-## 📂 Project Structure  
-
-Assuming typical layout, your project may look like:
-
