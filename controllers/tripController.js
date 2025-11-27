@@ -97,7 +97,8 @@ export const getTrips = async (req, res) => {
     });
 
     return res.json(tripsWithDuration);
-  } catch (error) {
+  } 
+  catch (error) {
     return res.status(500).json({
       message: `Error fetching trips: ${error.message}`,
     });
@@ -118,7 +119,8 @@ export const getTripById = async (req, res) => {
     tripObj.duration = getDuration(trip.departureTime, trip.arrivalTime);
 
     return res.json(tripObj);
-  } catch (error) {
+  } 
+  catch (error) {
     return res.status(500).json({
       message: `Error: ${error.message}`,
     });
@@ -144,7 +146,8 @@ export const updateTrip = async (req, res) => {
     }
 
     return res.json(tripObj);
-  } catch (error) {
+  } 
+  catch (error) {
     return res.status(500).json({
       message: `Update error: ${error.message}`,
     });
@@ -163,7 +166,8 @@ export const deleteTrip = async (req, res) => {
     }
 
     return res.json({ message: "Trip deleted successfully" });
-  } catch (error) {
+  } 
+  catch (error) {
     return res.status(500).json({
       message: `Delete error: ${error.message}`,
     });

@@ -4,7 +4,7 @@ import express from "express";
 
 import { registerUser, loginUser, getMe } from "../controllers/authController.js";
 import { createTrip, getTrips, getTripById, updateTrip, deleteTrip, getLocations } from "../controllers/tripController.js";
-import { createBooking, getMyBookings, getBookingById, cancelBooking } from "../controllers/bookingController.js";
+import { createBooking, getMyBookings, getBookingById, cancelBooking, getAllBookings } from "../controllers/bookingController.js";
 
 
 import { protect } from "../middlewares/authMiddleware.js";
@@ -34,6 +34,8 @@ router.post("/bookings", protect, createBooking);
 router.get("/bookings/me", protect, getMyBookings);
 router.get("/bookings/:id", protect, getBookingById);
 router.delete("/bookings/:id", protect, cancelBooking);
+router.get("/admin/bookings", protect, authorizeRoles("admin"), getAllBookings);
+
 
 
 
